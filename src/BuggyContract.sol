@@ -45,11 +45,8 @@ contract BuggyContract {
     // Think about how to make the loop more efficient
     // and read the compiler
     function sumNumbers(uint n) public pure returns (uint) {
-        uint sum = 0;
-        for (uint i = 1; i <= n; i++) {
-            sum += i;
-        }
-        return sum;
+        require(n != 0, "The number must be greater than zero.");
+        return (n * (n + 1)) / 2;
     }
 
     // Bug 7
